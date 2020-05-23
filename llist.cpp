@@ -178,8 +178,13 @@ void LList::delition(Node* node)
 	if (node == nullptr) {
 		return;
 	}
+	for (size_t i = 0; i < _size; i++)
+	{
+		Node* nextDeleteNode = node->next;
+		delete node;
+	}
 
 	Node* nextDeleteNode = node->next;
 	delete node;
-	delition(nextDeleteNode);
+	
 }
